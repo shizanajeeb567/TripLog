@@ -16,12 +16,12 @@ const Login = () => {
     try {
       const res = await login(formData);
       localStorage.setItem('token', res.data.token);
-      navigate('/');
+      navigate('/journal'); // updated
     } catch (err) {
       setError(err.response?.data?.message || 'Login failed');
     }
   };
-
+  
   return (
     <div style={styles.container}>
       <h2 style={styles.heading}>Login</h2>

@@ -16,7 +16,7 @@ const Register = () => {
     try {
       const res = await register(formData);
       localStorage.setItem('token', res.data.token);
-      navigate('/');
+      navigate('/journal'); // updated
     } catch (err) {
       setError(err.response?.data?.message || 'Registration failed');
     }
