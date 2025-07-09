@@ -1,6 +1,6 @@
 # Travel Journal API
 
-A RESTful API built with Node.js, Express, and MongoDB. Users can register, log in, add their own travel journals, and read journals added by others.
+A app built with Node.js, Express, MongoDB and frontend through react js. Users can register, log in, add their own travel journals, and read journals added by others.
 
 ## Features
 
@@ -17,14 +17,22 @@ npm install
 2. Create a `.env` file.
 
 3. Start the server:
-npm start
+npm run start (frontend)
+node server.js (backend)
 
 ## Project Structure
 
-- `controllers/` – request handling logic
-- `routes/` – API routes
-- `models/` – Mongoose schemas
-- `services/` – business logic
-- `middlewares/` – auth checks
-- `config/db.js` – MongoDB connection
-- `app.js` and `server.js` – main server files
+### Backend
+- `controllers/` – request handling logic  
+- `routes/` – API routes  
+- `models/` – Mongoose schemas  
+- `services/` – business logic  
+- `middlewares/` – auth checks  
+- `config/db.js` – MongoDB connection  
+- `app.js` and `server.js` – main server files  
+
+### Frontend
+- `components/` – reusable UI elements (e.g., Navbar)  
+- `pages/` – page-level React components like Login, Register, Journal, Add, Search  
+- `App.jsx` and `index.js` – React app entry point and routing  
+- `public/index.html` – base HTML file  
