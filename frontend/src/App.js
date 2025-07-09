@@ -5,8 +5,8 @@ import Landing from './pages/Landing';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Journal from './pages/Journal';
-import Add from './pages/Add';        // NEW
-import Search from './pages/Search';  // NEW
+import Add from './pages/Add';           
+import Search from './pages/Search';     
 
 const App = () => {
   return (
@@ -17,8 +17,8 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/journal" element={<Journal />} />
-        <Route path="/add" element={<Add />} />         {/* NEW */}
-        <Route path="/search" element={<Search />} />   {/* NEW */}
+        <Route path="/add" element={<Add />} />
+        <Route path="/search" element={<Search />} /> 
       </Routes>
     </BrowserRouter>
   );
