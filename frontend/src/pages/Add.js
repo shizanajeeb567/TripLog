@@ -21,7 +21,7 @@ const Add = () => {
     e.preventDefault();
     const token = localStorage.getItem('token');
     try {
-      await axios.post('/api/journals', form, {
+      await axios.post('/api/journal', form, {
         headers: { Authorization: `Bearer ${token}` },
       });
       alert('Journal added!');
