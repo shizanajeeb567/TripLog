@@ -1,42 +1,60 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Journal = () => {
-  const [view, setView] = useState(null); // 'add' or 'search'
+  const navigate = useNavigate();
 
   return (
-    <div className="bg-gray-100 min-h-screen p-6 max-w-4xl mx-auto">
-      <h1 className="text-2xl font-bold mb-6">My Travel Journal</h1>
-
-      <div className="flex gap-4 mb-6">
-        <button
-          className={`px-6 py-2 rounded ${view === 'add' ? 'bg-blue-700 text-white' : 'bg-white border'}`}
-          onClick={() => setView('add')}
-        >
+    <div style={styles.page}>
+      <div style={styles.card}>
+        <h1 style={styles.heading}>Trip Journal</h1>
+        <button style={styles.button} onClick={() => navigate('/Add')}>
           Add Journal
         </button>
-        <button
-          className={`px-6 py-2 rounded ${view === 'search' ? 'bg-blue-700 text-white' : 'bg-white border'}`}
-          onClick={() => setView('search')}
-        >
+        <button style={styles.button} onClick={() => navigate('/Search')}>
           Search Journal
         </button>
       </div>
-
-      {view === 'add' && (
-        <div className="p-6 bg-white rounded shadow">
-          {/* Add Journal Form will go here */}
-          <p className="text-gray-600">[ Add Journal Form Placeholder ]</p>
-        </div>
-      )}
-
-      {view === 'search' && (
-        <div className="p-6 bg-white rounded shadow">
-          {/* Search Journal UI will go here */}
-          <p className="text-gray-600">[ Search Journal UI Placeholder ]</p>
-        </div>
-      )}
     </div>
   );
+};
+
+const styles = {
+  page: {
+    minHeight: '100vh',
+    background: 'linear-gradient(to right, #c2e9fb, #dcb0ff)',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  card: {
+    backgroundColor: 'rgba(255, 255, 255, 0.25)',
+    backdropFilter: 'blur(10px)',
+    padding: '40px',
+    borderRadius: '12px',
+    textAlign: 'center',
+    width: '100%',
+    maxWidth: '400px',
+    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+  },
+  heading: {
+    color: '#fff',
+    fontSize: '28px',
+    fontWeight: 'bold',
+    marginBottom: '30px',
+  },
+  button: {
+    backgroundColor: '#a78bfa',
+    color: '#fff',
+    padding: '10px 20px',
+    fontSize: '16px',
+    border: 'none',
+    borderRadius: '6px',
+    cursor: 'pointer',
+    margin: '8px 0',
+    width: '100%',
+    transition: 'background 0.3s ease',
+  },
 };
 
 export default Journal;
